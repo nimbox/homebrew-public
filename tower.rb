@@ -5,11 +5,11 @@
 class Tower < Formula
   desc ""
   homepage "https://github.com/nimbox/tower"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
-    url "https://github.com/nimbox/tower/releases/download/v0.1.3/tower_0.1.3_darwin_all.tar.gz"
-    sha256 "1a6d8da13274fb33414ad9ca63c43aa6dc430fcc301aca2cfbb6bca9c17f141f"
+    url "https://github.com/nimbox/tower/releases/download/v0.1.4/tower_0.1.4_darwin_all.tar.gz"
+    sha256 "0aa35d1a62b55186759093dc5c6488958448c79a19b6922edfb4da8417ceb346"
 
     define_method(:install) do
       bin.install "tower"
@@ -18,15 +18,15 @@ class Tower < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nimbox/tower/releases/download/v0.1.3/tower_0.1.3_linux_amd64.tar.gz"
-      sha256 "83be8a0368f7e74e033d21aa6f6bede5bce756f32457fd8dfaa1d236d8ecb5d8"
+      url "https://github.com/nimbox/tower/releases/download/v0.1.4/tower_0.1.4_linux_amd64.tar.gz"
+      sha256 "9e86b2f59a2e5cc2ebc779e874efa14c2095717c9e33973ac61e6d654acfc256"
       define_method(:install) do
         bin.install "tower"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nimbox/tower/releases/download/v0.1.3/tower_0.1.3_linux_arm64.tar.gz"
-      sha256 "59dbdd2c29ae771152f3e516797c0e057a016320b5da39642a10cb224c832b78"
+      url "https://github.com/nimbox/tower/releases/download/v0.1.4/tower_0.1.4_linux_arm64.tar.gz"
+      sha256 "7206d048528a7636febf8ccb235b0cb39a268c2d99fa4763e975ed7975c81d26"
       define_method(:install) do
         bin.install "tower"
       end
