@@ -6,11 +6,11 @@ require_relative "lib/private_strategy"
 class Tower < Formula
   desc ""
   homepage "https://github.com/nimbox/tower"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    url "https://github.com/nimbox/tower/releases/download/v0.1.5/tower_0.1.5_darwin_all.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "1ab9886b2aa8dec11e040356187570d700b032806525fcc47512aee30720ec46"
+    url "https://github.com/nimbox/tower/releases/download/v0.1.6/tower_0.1.6_darwin_all.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "cf37d303574c547360c5d9f72b661aea89b2d742743eda6dd1e072d231f63a15"
 
     define_method(:install) do
       bin.install "tower"
@@ -19,15 +19,15 @@ class Tower < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nimbox/tower/releases/download/v0.1.5/tower_0.1.5_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "c7dd1b7b0475b6b2611c803ae9140d2453b149d2e8c1ec2e95ac4e3215e3ff40"
+      url "https://github.com/nimbox/tower/releases/download/v0.1.6/tower_0.1.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "5a0a03d49c3711b730420cdde73ec42beaefbe371f23d891f406e0606bfda141"
       define_method(:install) do
         bin.install "tower"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nimbox/tower/releases/download/v0.1.5/tower_0.1.5_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f52b3f6f599a845d1b59eac91fec02206cf6e0c7944ab63bce823b21e1f51a2c"
+      url "https://github.com/nimbox/tower/releases/download/v0.1.6/tower_0.1.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "5f6a1fcf0923762ba3e6eb65a7340f3251da75e63a527529f4186d8bae8623af"
       define_method(:install) do
         bin.install "tower"
       end
