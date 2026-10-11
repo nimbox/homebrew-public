@@ -2,21 +2,21 @@
 cask "crew" do
   require_relative "../lib/private_strategy"
 
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
-    sha256 "3a7e4704f9a2f82f55e0d4262643edc54eddba49bddc6ad95d4cabaa2f517945"
+    sha256 "31fc068f0e6fe14520c4eea2f32e19f0204e8e0d01338c9a0e3a809682f642d4"
     url "https://github.com/nimbox/crew/releases/download/v#{version}/crew_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "32affc850c13b327b15036b440e717ed1250737f6acb7b83ddafe6fe70da660b"
+      sha256 "cb88307b2e031899706af7fce52b55a182aaf25a13a7c87f0b6cd7fe767fe223"
       url "https://github.com/nimbox/crew/releases/download/v#{version}/crew_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "ec968bd29bb26e720019053d1d22c5a9d69cf08a37720e24d6c89913bac10ccb"
+      sha256 "33dac820ce020e67e43d1c20e90b9a7f17c31b3917de181d1ffe5a05b96d550e"
       url "https://github.com/nimbox/crew/releases/download/v#{version}/crew_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
