@@ -2,21 +2,21 @@
 cask "atlas" do
   require_relative "../lib/private_strategy"
 
-  version "0.10.12"
+  version "0.10.13"
 
   on_macos do
-    sha256 "2416ec6044e514e9f4dcdcdc7beb462b44d39f3021d21c5933e433591eb71ef1"
+    sha256 "0cb64818f4712fb225f3cd467d69adda5000113a0962430da9ec80837050dad0"
     url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "4d9f2f5cec0c02d18d0c5e2f90f8c3dd55f4dee7282fe3ba6511ed3e988edeb0"
+      sha256 "04fec2387a195cd00cbde10e6aa5941e47e3ac45479e713539ca71f31b13ce56"
       url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "c24f6923609c2697ba46af55efc66d17eed0ac1fb7895d051fd5b8d4c33c3576"
+      sha256 "aae9eb53119ecb16891ccfb6aa79b8a6e14cdabe42219b5969dd40cb0997aa25"
       url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
@@ -32,8 +32,8 @@ cask "atlas" do
 
   binary "atlas"
   bash_completion "completions/atlas.bash"
-  fish_completion "completions/atlas.fish"
   zsh_completion "completions/_atlas"
+  fish_completion "completions/atlas.fish"
 
   postflight do
     if OS.mac?
