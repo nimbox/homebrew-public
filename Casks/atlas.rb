@@ -2,21 +2,21 @@
 cask "atlas" do
   require_relative "../lib/private_strategy"
 
-  version "0.11.1"
+  version "0.11.2"
 
   on_macos do
-    sha256 "9ce8d4cd3bfa9556e81c00332683d12fd0ae54c75c78362cb5f0be831436b11b"
+    sha256 "57299425b3ea65b56c4d99ce34936604e699898ca7f3291a9c678d717ad6ca3a"
     url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "7ac1cdb35aa6ac022742d168576786c5acc7d805ad7d24afad6a520aaee06cac"
+      sha256 "aeb271e0401e1f9c2bad3c430dd5993bf324c533e80573a0569ade64b5c907f1"
       url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "5fde65c107f1cb6afba5b901523948d34cd2d29c9f65a8544b3725a2755edf62"
+      sha256 "1f46a1ba5b60fecc3a89dd6b03e0208e321c29a913bebbb7e0b81785b4ee4236"
       url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
@@ -35,9 +35,9 @@ cask "atlas" do
   zsh_completion "completions/_atlas"
   fish_completion "completions/atlas.fish"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/atlas"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/atlas"]
     end
   end
 
