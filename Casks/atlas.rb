@@ -2,21 +2,21 @@
 cask "atlas" do
   require_relative "../lib/private_strategy"
 
-  version "0.12.0"
+  version "0.12.1"
 
   on_macos do
-    sha256 "b12ce0720483f0f2cfb42b5808b6520506436f47827cc0ff6b89662d30240683"
+    sha256 "febf9afe5186653ddbb04220b3b417442c9f6ac80a3fc7186a5f5a43af589e5a"
     url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "a716f747435aef800fc5d75514a53b42389fa21e2e9ebe8899978c29990762a3"
+      sha256 "659b0c1f83e98605a446e77b06bd7e23a6c22c81f9a4ef41376d5f72e4d52687"
       url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "f2928f52cc1cb34f764f602b9bb45167eab505ad01db425b5cd3c986cceb373b"
+      sha256 "c3c19ca7fdd3981fa41851b643b3ed55ffd72588576890a2947d42316b8477b2"
       url "https://github.com/nimbox/atlas/releases/download/v#{version}/atlas_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
