@@ -2,21 +2,21 @@
 cask "tower" do
   require_relative "../lib/private_strategy"
 
-  version "0.5.1"
+  version "0.6.0"
 
   on_macos do
-    sha256 "9899627e9dc8cc06063808eecb9fbcc8c7190a22ab1940fb7a5d8546af680f9e"
+    sha256 "55ab540b9fe96bc85dea8d4e9313cd080268d62f50ac4ce5ccfaee5237ab6f9c"
     url "https://github.com/nimbox/tower/releases/download/v#{version}/tower_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "dad7fbb5b5ae9ecbf1117c436fafe9fb0185e9eaebc49830d0a434f527d0c3c2"
+      sha256 "e4e0fc4eae9b385924b3ffc83fbcb04d71d420655abc31ea668ca03e0986a1f5"
       url "https://github.com/nimbox/tower/releases/download/v#{version}/tower_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "c4796c07295471c774d001232e56f88a6e7a56ebb414739f0268096ccb6e8816"
+      sha256 "df44e354a1236cf7df719f19f6eaa45a94b6a5f00c8e7c5e57fad6afb07911ef"
       url "https://github.com/nimbox/tower/releases/download/v#{version}/tower_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
@@ -32,8 +32,8 @@ cask "tower" do
 
   binary "tower"
   bash_completion "completions/tower.bash"
-  fish_completion "completions/tower.fish"
   zsh_completion "completions/_tower"
+  fish_completion "completions/tower.fish"
 
   postflight do
     if OS.mac?
