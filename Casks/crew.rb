@@ -2,21 +2,21 @@
 cask "crew" do
   require_relative "../lib/private_strategy"
 
-  version "0.1.5"
+  version "0.2.0"
 
   on_macos do
-    sha256 "04317de98c67e9b8e6f91ce441c6882fa46f49e6a214acbecd6d9a1f2ac3fb51"
+    sha256 "16e492262d819b3d020500a5729dd4d0c4a6bdef2c93646584e31c4e843134da"
     url "https://github.com/nimbox/crew/releases/download/v#{version}/crew_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "c18d023bae16e66afa2e64d0f4db30cb3025dc1a24507c290236be4c8474d14f"
+      sha256 "b56740a019192caec5aaa3c2947d1dce9ff9df12ed5ca6fa07aba8b95a36aba6"
       url "https://github.com/nimbox/crew/releases/download/v#{version}/crew_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "b1bbe193b5800c8bf80456765e083cc65a3d3ab701a134d02625e0aed04cba6b"
+      sha256 "8bad0a4f62b4efd32a970aeedac490e47be60ddcc273fb047e0c271cc8c78c9e"
       url "https://github.com/nimbox/crew/releases/download/v#{version}/crew_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
@@ -32,8 +32,8 @@ cask "crew" do
 
   binary "crew"
   bash_completion "completions/crew.bash"
-  fish_completion "completions/crew.fish"
   zsh_completion "completions/_crew"
+  fish_completion "completions/crew.fish"
 
   postflight do
     if OS.mac?
