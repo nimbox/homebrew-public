@@ -2,21 +2,21 @@
 cask "tower" do
   require_relative "../lib/private_strategy"
 
-  version "0.11.0"
+  version "0.12.0"
 
   on_macos do
-    sha256 "3b2b0b9a6a7ba08b3de01f3668a081ddc45e9df8bdc3235eb5e12d408857c21b"
+    sha256 "f9eceafa71343d0a6c57c49dc782d92d7f52258841be130dda19613c11580c79"
     url "https://github.com/nimbox/tower/releases/download/v#{version}/tower_#{version}_darwin_all.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
   end
   on_linux do
     on_arm do
-      sha256 "8fa0e06bd2c481be45b7aa693e166b1f6e9a039b61dd437be12655c04f37d5fe"
+      sha256 "c8d2528dd2483b6b6a2ea940e057559a0b286e49864005557f1a34eded2f4cf5"
       url "https://github.com/nimbox/tower/releases/download/v#{version}/tower_#{version}_linux_arm64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
     on_intel do
-      sha256 "8986b22a4261adc83ff8659cae574fbc5ccd5087d5b67e7310940669112f52d5"
+      sha256 "164203ad90d0bcafef7a3024b6fc48157467a92b2af46666c08ab4cdb745cec8"
       url "https://github.com/nimbox/tower/releases/download/v#{version}/tower_#{version}_linux_amd64.tar.gz",
         using: GitHubPrivateRepositoryReleaseDownloadStrategy
     end
@@ -41,5 +41,5 @@ cask "tower" do
     end
   end
 
-  # No zap stanza required
+  zap :not_required
 end
